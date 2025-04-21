@@ -6,7 +6,7 @@
 
 **Consulta SQL:**
 ```sql
-select c1.id_cliente, c1.nombre, sum(c2.saldo) from cliente c1 join cuenta c2 on c1.id_cliente = c2.id_cliente  group by c1.id_cliente  order by sum(c2.saldo) desc  ;
+select c1.id_cliente, c1.nombre, sum(c2.saldo) AS SaldoTotal from cliente c1 join cuenta c2 on c1.id_cliente = c2.id_cliente  group by c1.id_cliente  order by SaldoTotal desc;
 
 ```
 
