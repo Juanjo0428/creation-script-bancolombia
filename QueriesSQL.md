@@ -43,5 +43,5 @@ select c1.id_cliente, c1.nombre, sum(c2.saldo) AS SaldoTotal from cliente c1 joi
 
 **Consulta SQL:**
 ```sql
-
+select * from cuenta c1 join transaccion tr on c1.num_cuenta=tr.num_cuenta where tipo_transaccion='transferencia' and descripcion != 'Retiro en cajero';
 ```
