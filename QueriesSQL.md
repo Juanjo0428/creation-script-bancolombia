@@ -16,6 +16,7 @@ select c1.id_cliente, c1.nombre, sum(c2.saldo) AS SaldoTotal from cliente c1 joi
 
 **Consulta SQL:**
 ```sql
+select c1.num_cuenta, c1.id_cliente, sum(tr.monto) as monto, tr.tipo_transaccion from transaccion tr join cuenta c1 on tr.num_cuenta = c1.num_cuenta where tr.tipo_transaccion != 'tr.transferencia' group by c1.num_cuenta, c1.id_cliente, tipo_transaccion;
 
 ```
 
