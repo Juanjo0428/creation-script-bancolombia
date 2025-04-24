@@ -26,7 +26,9 @@ select c1.num_cuenta, c1.id_cliente, sum(tr.monto) as monto, tr.tipo_transaccion
 
 **Consulta SQL:**
 ```sql
-
+select * from cuenta C1 left JOIN tarjeta ta 
+on c1.num_cuenta = ta.num_cuenta
+where ta.numero_tarjeta = null;
 ```
 
 ## Enunciado 4: Análisis de saldos promedio por tipo de cuenta y comportamiento transaccional
