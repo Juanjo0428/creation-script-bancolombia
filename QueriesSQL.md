@@ -35,7 +35,10 @@ select c1.num_cuenta, c1.id_cliente, sum(tr.monto) as monto, tr.tipo_transaccion
 
 **Consulta SQL:**
 ```sql
-
+select c1.num_cuenta, avg(c1.saldo), c1.tipo_cuenta, tr.fecha as fecha_transaccion from cuenta c1 join transaccion tr on c1.num_cuenta = tr.num_cuenta
+where tr.fecha >= CURRENT_DATE - INTERVAL '30 days'
+group by c1.num_cuenta, tr.fecha
+order by c1.saldo desc;
 ```
 
 ## Enunciado 5: Clientes con transferencias pero sin retiros en cajeros
